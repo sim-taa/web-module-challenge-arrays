@@ -45,10 +45,10 @@ Use the copy function below to do the following:
   2. Return a copy of the received array  
 */
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(array){
+  return [...array];
 }    
-
+console.log('task 1', copy(originalFlavors));
 
 
 
@@ -63,9 +63,10 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
 
-
+// use a 1 parameter array
 function is31Flavors(/*your code here*/){
  /*your code here*/
+ // we want to check to see that the length of the array is equal to 31. if it is, return true. else, return false.
 }
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -80,7 +81,8 @@ Use the addFlavor function below to do the following:
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
 
-
+// 2 parameter array, second is new flavor 
+//use unshift to add to the front of an array and return the array
 function addFlavor(/*your code here*/){
  /*your code here*/
 }
@@ -88,7 +90,7 @@ function addFlavor(/*your code here*/){
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
-
+//use array.pop() and return the array
 Use the removeLastFlavor function below to do the following:
   1. Receive an array
   2. Remove the last item from the received array
@@ -105,6 +107,10 @@ function removeLastFlavor(/*your code here*/){
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function that returns a flavor at a given index in the array.
+//most people over-complicate this question
+//2 parameter array, index
+//how do I see something at index 2 of an array? index[1]
+//for example if I passed in (original flavors and 2 I would want to return (originalFlavors,[2]))
 
 Use the getFlavorByIndex function below to do the following:
   1. Recieve an array
@@ -120,9 +126,11 @@ function getFlavorByIndex(/*your code here*/){
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+//loop through the array and use a conditional to check for strict equality
+//use 2 parameters. array first, then string. muffin example.
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, 
 as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
-
+//look at guided project line 60 or 70
 Use the removeFlavorByName function below to do the following:
   1. Receive an array
   2. Receive a flavor as a string
@@ -141,6 +149,14 @@ function removeFlavorByName(/*your code here*/){
 
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
+//2 parameters array, string
+//use array.includes()
+//remember that includes is case sensitive
+//create a new array called filtered array to push the values to
+//loop through original array and check each item
+//if the item includes the string, I want to push it to the new array
+//return the new array
+
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
 Your task is to write a function that checks every item in the array for a string and returns a new array called filteredArray with only the values 
 that contain the received string. This would allow you to be able to filter for "Vanilla", "Sherbet", "Lemon" etc. when different holidays roll around 
